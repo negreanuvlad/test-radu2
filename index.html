@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300&family=Montserrat:wght@300;400;500&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&family=Raleway:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+
+    <!-- Script -->
+    <script src="src/app.js" defer></script>
+    <script type="text/javascript" src="/node_modules/tw-elements/dist/js/tw-elements.umd.min.js" defer></script>
+    <!-- TailwindCSS and normal css file -->
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Project: Sign-up Form</title>
+</head>
+
+<body class="bg-gray-300 max-h-screen ">
+
+    <section class="slideIn" id="firstPage">
+        <div class="grid grid-cols-1 md:grid-cols-3 mx-4 rounded-2xl max-h-screen">
+
+            <div class=" rounded-l-2xl min-h-screen m-4 lg:my-16">
+                <div class="background-1 h-full rounded-2xl relative">
+                    <span class=" w-full h-20 bg-gray-400 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-30"></span>
+                    <span class="logo h-20 w-16 z-10 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-100"></span>
+                </div>
+            </div>
+            <div class=" rounded-r-2xl col-span-2 flex flex-col justify-evenly">
+                <div class="bg-gray-100 m-4 rounded-2xl">
+                    <h1 class="title font-montserat text-xl m-6 ">Super undisclosed hidden rave that will be held
+                        at a
+                        random
+                        location,
+                        at a stupid hour with a tons of super artists,
+                        and you will not be able to find it, because it's a secret, you will be send an email with the
+                        location and hour in the day of the event, and some of the artists that are coming will be
+                        slowly
+                        emailed to you from other different email addresses, a full list of artists will not be
+                        disclosed to
+                        any one, at any time.
+                    </h1>
+                </div>
+                <form class="m-4 bg-gray-100 rounded-2xl">
+                    <fieldset class="grid md:grid-cols-2 justify-center">
+                        <legend class="font-josefin text-3xl p-2 m-4 col-span-2 text-left md:text-left">
+                            Let's do this!
+                        </legend>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="fname" class="font-josefin m-2">First Name <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="text" name="name" id="fname" placeholder="eg: John "
+                                class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required minlength="4">
+                            <span class="text-red-500 font-josefin ml-2 mt-2 text-sm" id="fnameError"></span>
+                        </div>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="lname" class="font-josefin m-2">Last Name <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="text" name="lname" id="lname" placeholder="eg: Doe "
+                                class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required>
+                            <span class="text-red-500 font-josefin ml-2 mt-2 text-sm" id="lnameError"></span>
+                        </div>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="email" class="font-josefin m-2">Email <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="mail" name="email" id="email" placeholder="eg: asd@gmail.com "
+                                class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required>
+                            <span class="ml-2 mt-2 text-red-500 font-josefin text-sm" id="emailError"></span>
+                        </div>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="phoneNumber" class="font-josefin m-2">Phone number <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="eg: 0723456789 "
+                                class="indent-2 rounded-xl font-josefin text-lg p-2  focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required>
+                            <span class="text-red-500 font-josefin ml-2 mt-2 text-sm" id="phoneError"></span>
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-start m-4">
+                            <div class="wrapper flex flex-col">
+                                <label for="password" class="font-josefin m-2">Password <span
+                                        class="required text-red-600 hover:cursor-none">*</span></label>
+                                <input type="password" name="password" id="password" placeholder=""
+                                    class="indent-2 rounded-xl font-josefin text-lg p-2  focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                    required>
+                            </div>
+                            <ul class="ml-3 mt-6 font-josefin text-sm hidden" id="passwordStrenghtCheck">
+                                <li class="text-red-500 " id="pwdCapital">Capital letter</li>
+                                <li class="text-red-500 " id="pwdLength">Passowrd length</li>
+                                <li class="text-red-500 " id="pwdNumber">Number character</li>
+                                <li class="text-red-500 " id="pwdSpecial">Special character</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="passwordConfirm" class="font-josefin m-2">Password <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Password"
+                                class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required>
+                            <span class="text-red-500 font-josefin ml-2 mt-2 text-sm" id="passwordConfirmError"></span>
+                        </div>
+                    </fieldset>
+                    <div class=" flex-row bg-gray-100 rounded-2xl items-start m-4 justify-between md:flex">
+                        <div class="flex-flex-col">
+                            <button type="submit"
+                                class="m-4 bg-gray-600 hover:bg-gray-950 text-white font-josefin p-2 rounded-2xl text-xl ">Rave
+                                Account</button>
+                            <p class="m-4">Already have an account? <span id="logInPage"
+                                    class="hover:text-blue-700 hover:cursor-pointer">Log in</span>
+                            </p>
+                        </div>
+
+                        <a class="font-josefin text-sm m-4 self-end justify-center text-right text-gray-500 hover:text-gray-700 hover:underline"
+                            id="offCanvasButton" data-te-offcanvas-toggle href=" #offCanvas" role="button"
+                            aria-controls="offCanvas" data-te-ripple-init data-te-ripple-color="light">
+                            Read our terms and conditions!
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="flex space-x-2">
+            <div class="invisible fixed bottom-0 left-0 top-0 z-[1045] flex w-96 max-w-full min-h-screen -translate-x-full flex-col border-none bg-white bg-clip-padding text-neutral-700 shadow-sm outline-none transition duration-300 ease-in-out dark:bg-neutral-800 dark:text-neutral-200 [&[data-te-offcanvas-show]]:transform-none"
+                tabindex="-1" id="offCanvas" aria-labelledby="offCanvasLabel" data-te-offcanvas-init>
+                <div class="flex items-center justify-between p-4">
+                    <h5 class="mb-0 font-semibold leading-normal font-montserat text-2xl text-ce" id="offCanvasLabel">
+                        Terms and conditions
+                    </h5>
+                    <button type="button"
+                        class="box-content rounded-none border-none opacity-50 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        id="scrollToBottom" data-te-offcanvas-dismiss>
+                        <span
+                            class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="h-6 w-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <section class="flex-grow overflow-y-auto p-4">
+                    <div>
+                        <h2 class="font-montserat text-xl m-6 underline ">Rave's termsand conditions
+                        </h2>
+
+                        <ul>
+                            <h2 class="font-montserat text-lg m-4">Event Details:</h2>
+                            <li class="font-nunito indent-2">
+                                The organizers of Rave reserve the right to keep the
+                                location,
+                                date,
+                                and time undisclosed until a specified period before the event.
+                                Attendees will be informed of the event details through the official
+                                channels provided by the organizers.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Ticket Purchase and Admission:
+                            </h2>
+                            <li class="font-nunito">
+                                Tickets are non-transferable and non-refundable.
+                                Attendees must bring a valid government-issued ID and the ticket
+                                confirmation for admission.
+                                The organizers reserve the right to deny entry to any person without
+                                providing a reason.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">
+                                Code of Conduct:
+                            </h2>
+                            <li class="font-nunito">
+                                Attendees must conduct themselves in a respectful and responsible
+                                manner.
+                                Any form of illegal activity, including drug use, will result in
+                                immediate
+                                expulsion from the event.
+                                The organizers are not responsible for the actions of individual
+                                attendees.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Security Measures:</h2>
+                            <li class="font-nunito">
+                                All attendees are subject to search upon entry.
+                                Prohibited items include weapons, illegal substances, and any items
+                                deemed a
+                                security risk by event staff.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Health and Safety:</h2>
+                            <li class="font-nunito">
+                                Attendees are responsible for their own well-being.
+                                Medical personnel will be available on-site for emergencies.
+                                It is advisable to stay hydrated and be aware of personal limits
+                                during
+                                the
+                                event.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Intellectual Property:</h2>
+                            <li class="font-nunito">
+                                Unauthorized photography, videography, or audio recording is
+                                strictly
+                                prohibited.
+                                Attendees may be captured in official event media, and by
+                                attending,
+                                they
+                                grant the organizers the right to use such media for promotional
+                                purposes.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Cancellation or Postponement:
+                            </h2>
+                            <li class="font-nunito">
+                                The organizers reserve the right to cancel, reschedule, or relocate
+                                the
+                                event due to unforeseen circumstances.
+                                In case of cancellation, ticket holders will be provided with
+                                information on
+                                refunds or alternative arrangements.
+                            </li>
+                            <h2 class="font-montserat text-lg m-4">Liability:</h2>
+                            <li class="font-nunito">Attendees participate at their own risk.
+                                The organizers are not liable for any loss, injury, or damage
+                                sustained
+                                during the event.</li>
+                            <h2 class="font-montserat text-lg m-4">Privacy Policy:</h2>
+                            <li class="font-nunito">Personal information collected during ticket
+                                purchase will be used in
+                                accordance with the event's privacy policy.</li>
+                            <h2 class="font-montserat text-lg m-4">Legal Compliance:</h2>
+                            <li class="font-nunito">Attendees must comply with all applicable laws
+                                and regulations.
+                                Any violations may result in immediate removal from the event and
+                                legal
+                                action.
+                                By purchasing a ticket and attending Rave, attendees
+                                acknowledge
+                                that
+                                they have read, understood, and agreed to abide by these terms and
+                                conditions.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="slideOut " id="secondPage">
+        <div class="grid grid-cols-3 mx-4 rounded-2xl max-h-screen">
+
+            <div class=" rounded-l-2xl min-h-screen">
+                <div class="background-2 h-full rounded-2xl relative">
+                    <span class=" w-full h-20 bg-gray-200 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-30"></span>
+                    <span class="logo h-20 w-16 z-10 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-100"></span>
+                </div>
+            </div>
+            <div class=" rounded-r-2xl col-span-2 flex flex-col justify-evenly">
+                <div class="bg-gray-100 m-4 rounded-2xl">
+                    <h1 class="title font-montserat text-xl m-6 ">Welcome, our old brother that has long been lost,
+                        please come and rave with us, have some drugs, have some alcohol, have some fun, and don't
+                        forget to bring your friends, we will have a blast, and we will not remember anything, because
+                        we will be too drunk and high to remember anything, but we will have fun, and that's what
+                        matters.
+                    </h1>
+                </div>
+                <form class="m-4 bg-gray-100 rounded-2xl">
+                    <fieldset class="grid md:grid-cols-2 justify-center">
+                        <legend class="font-josefin text-3xl p-2 m-4 col-span-2 text-left md:text-left">
+                            So, wagwan bruv?
+                        </legend>
+                        <div class="flex flex-col items-start m-4">
+                            <label for="logInEmail" class="font-josefin m-2">Email <span
+                                    class="required text-red-600 hover:cursor-none">*</span></label>
+                            <input type="mail" name="logInEmail" id="logInEmail" placeholder="Email"
+                                class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                required minlength="4">
+                            <span class="ml-2 mt-2 text-red-500 font-josefin text-sm" id="logInEmailError"></span>
+
+                        </div>
+                        <div class="flex flex-col lg:flex-row items-start m-4">
+                            <div class="wrapper flex flex-col">
+                                <label for="logInPassword" class="font-josefin m-2">Password <span
+                                        class="required text-red-600 hover:cursor-none">*</span></label>
+                                <input type="password" name="logInPassword" id="logInPassword" placeholder="Password"
+                                    class="indent-2 rounded-xl font-josefin text-lg p-2 focus:outline-none focus:ring focus:ring-violet-300 invalid:ring-red-500 focus:invalid:ring-red-500"
+                                    required>
+                            </div>
+                    </fieldset>
+                    <div class="flex flex-col bg-gray-100 rounded-2xl items-start m-4">
+                        <button type="submit"
+                            class="m-4 bg-gray-600 hover:bg-gray-950 text-white font-josefin p-2 rounded-2xl text-xl ">Rave
+                            Account</button>
+                        <p class="m-4">Don't have an account? <span id="signUpPage"
+                                class="hover:text-blue-700 hover:cursor-pointer">Sign-up</span>
+                        </p>
+                    </div>
+                </form>
+    </section>
+</body>
+
+</html>
